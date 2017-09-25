@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/product_detail.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    
+    <script src="js/angular.min.js"></script>
+    <script src="js/demo.js"></script>
+    <title>饿了么-商品详情页</title>
+</head>
+<body ng-controller="cont">
+    <!-- header开始 -->
+    <header id="pro-header">
+        <div class="warp">
+            <div class="jt"><</div>
+            <div class="pro-center fl">
+                <img src="images/main01.png">
+                <div class="pro-box fl">
+                    <h2>小杨生煎（星游城店）</h2>
+                    <p class="fl">商家配送/46分钟送达/配送费5元</p><span class="fr">></span>
+                    <dt class="fl"><b>公告：</b>欢迎光临，用餐高峰期请提前下单，谢谢</dt>
+                </div>
+                <h4 class="fl"><b style="background:green; margin-right:5px">新</b>用户下单立减21.0元(不与其它活动同享)</h4>
+                <p class="span fr">4个活动</p>
+            </div>
+        </div>
+    </header>
+    <!-- header结束 -->
+    <!-- nav开始 -->
+    <div id="nav">
+        <div class="nav-title" style="color:#3190e8;">商品</div>
+        <div class="nav-title">评价</div>
+    </div>
+    <!-- nav结束 -->
+    <!-- pro-main开始 -->
+    <div id="pro-main">
+        <div class="pro-mbox" style="display:block">
+            <div class="swiper-container pro-bleft fl">
+                <div class="swiper-wrapper">
+                    <li class="swiper-slide" style="border-left:0.086957rem solid #3190e8; background:#fff;">
+                        <p><b style="background:red; font-size:0.434783rem; color:#fff; margin-right:0.086957rem;">热</b>热销榜</p>
+                    </li>
+                    <li class="swiper-slide">
+                        <p><b style="background:yellow; font-size:0.434783rem; color:#fff; margin-right:0.086957rem;">优</b>优惠</p>
+                    </li>
+                    <li class="swiper-slide">
+                        <p>港式早点</p>
+                    </li>
+                    <li class="swiper-slide">
+                        <p>中式早点</p>
+                    </li>
+                    <li class="swiper-slide">
+                        <p>港式冷饮</p>
+                    </li>
+                    <li class="swiper-slide">
+                        <p>中式冷饮</p>
+                    </li>
+                </div>
+            </div>
+            <div class="swiper-container pro-bright fl">
+                <div class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>热销榜</b><p>大家喜欢吃，才叫真好吃！</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>优惠</b><p>美味食惠</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>港式早点</b><p>真宗港式早点</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>中式早点</b><p>中国美食</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>港式冷饮</b><p>港式冷饮</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="pro-btitle"><b>中式冷饮</b><p>中式冷饮</p><span>•••</span></div> 
+                        <div class="pro-bcont" ng-repeat="item in data">
+                            <img src="{{item.img}}">
+                            <div class="proCont-lf">
+                                <h1>{{item.proContH1}}</h1>
+                                <p>{{item.proContP}}</p>
+                                <span>{{item.proContSpan1}}</span>
+                                <span>{{item.proContSpan2}}</span>
+                                <div class="pro-Clfprice">
+                                    <p><sub>￥</sub>{{item.price}}</p>
+                                    <div class="fr">
+                                        <button ng-click="set(item.goodsId,false)">-</button>
+                                        <span>{{item.num=item.num<=0?0:item.num}}</span>
+                                        <button ng-click="set(item.goodsId,true)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="pro-mbox">2</div>
+    </div>
+    <!-- pro-main结束 -->
+    <!-- 购物车开始 -->
+    <div id="cart" ng-repeat="item in data">{{Sum()}}</div>
+    <div class="shopping fl">
+        <div class="shop-left fl">
+            <img src="images/cart2@2x.png">
+            <p>{{totalPrice()}}元<sub style="margin-left:0.434783rem">配送费5元</sub></p>
+        </div>
+        <div class="shop-right fr">还差￥{{20-chaPrice()}}起送</div>
+    </div>
+<!-- 选择商品后的显示状态 -->
+    <div class="shopping2 fl">
+        <div class="shop-left fl">
+            <img src="images/cart2@2x.png"><p>{{totalPrice()}}元
+            <sub style="margin-left:0.434783rem">配送费5元</sub></p>
+        </div>
+        <div class="shop-right fr">去结算</div>
+    </div>
+<!-- 购物车结束 -->
+<!-- pro-cart开始 -->
+    <div id="pro-cart">
+        <div style="position:absolute; bottom:1.913043rem; left:0; overflow:hidden; background:#fff; width:100%;">
+            <div class="pro-cartTop">
+                <h2>购物车</h2>
+                <p ng-click="cart=[]">清空</p>
+            </div>
+            <div class="pro-cartCont" ng-repeat="item in cart">
+                <div class="fl" style="margin-left:0.434783rem; ">{{item.proContH1}}</div>
+                <div class="fr" style="margin-right:0.652174rem;">
+                    <p class="fl" style="height:2.391304rem; margin-right:0.869565rem;color:#f60;"><sub>￥</sub>{{item.price*item.num}}</p>
+                    <button ng-click="set(item.goodsId,false)">-</button>
+                    <span>{{item.num=item.num<=0?0:item.num}}</span><button ng-click="set(item.goodsId,true)">+</button>
+                </div>
+            </div>
+            <div class="pro-cartCont">
+                <div class="fl" style="margin-left:0.434783rem; ">餐盒费</div>
+                <div class="fr" style="margin-right:0.652174rem;"><p class="fl" style="height:2.391304rem; margin-right:3.913043rem;color:#f60;"><sub>￥</sub>{{canHe()}}</p></div>
+            </div>
+        </div>
+    </div>
+<!-- pro-cart结束 -->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/product_detail.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/fly.js"></script>
+
+    <script>
+    var proBleft=document.getElementsByClassName("pro-bleft")[0];
+    var proBleftLi=proBleft.getElementsByTagName("li");
+    var proBleft = new Swiper('.pro-bleft', {
+        resistanceRatio : 0.5,
+        slidesPerView :10,
+        direction:'vertical',
+        freeMode : true,
+        freeModeMomentum : false,
+        onTap:function(){
+            for(var a=0;a<proBleftLi.length;a++){
+                proBleftLi[a].style.background="#ededed";
+                proBleftLi[a].style.borderLeft='0.086957rem solid #ededed';
+            }
+            proBleftLi[proBleft.clickedIndex].style.borderLeft='0.086957rem solid #3190e8';
+            proBleftLi[proBleft.clickedIndex].style.background="#fff";
+            proBright.slideTo(proBleft.clickedIndex);
+
+        }
+    });
+
+    var proBright = new Swiper('.pro-bright', {
+        resistanceRatio : 0.5,
+        slidesPerView : 1,         
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        onSlideChangeEnd:function(){      
+                proBleft.slideTo(proBright.activeIndex);
+        }
+        
+    });
+
+    </script>
+
+
+</body>
+</html>
